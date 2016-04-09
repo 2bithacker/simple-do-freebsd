@@ -1,17 +1,16 @@
-Simple DigitalOcean FreeBSD Init
-====
+# Simple DigitalOcean FreeBSD Init
 
-By default, (DigitalOcean)[http://digitalocean.com] uses a customized
+By default, [DigitalOcean](http://digitalocean.com) uses a customized
 bsd-cloudinit for initializing FreeBSD droplets from their Metadata API.
 
 This is a simplified version of that, which requires no modification to the
 FreeBSD base system and consists of just an rc.d script and a Python script.
 
-h2. Requirements
+## Requirements
 
 * python2.7
 
-h2. Usage
+## Usage
 
 Install the `digitalocean` file in /etc/rc.d of a FreeBSD droplet you intend to
 use as a snapshot template for new droplets and install `simple-fbsd-init.py` in
