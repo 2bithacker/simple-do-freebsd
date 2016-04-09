@@ -16,6 +16,6 @@ Install the `digitalocean` file in /etc/rc.d of a FreeBSD droplet you intend to
 use as a snapshot template for new droplets and install `simple-fbsd-init.py` in
 `/usr/local/sbin`.
 
-On the next reboot, the script will popular `/etc/rc.conf.d` with `routing`,
+On the next reboot, the script will populate `/etc/rc.conf.d` with `routing`,
 `network`, and `hostname` files with the relevant config parameters, and it will
 call `resolvconf` with DNS configuration for `vtnet0`.
