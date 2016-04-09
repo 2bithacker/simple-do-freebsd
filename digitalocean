@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: digitalocean
+# REQUIRE: var
+# BEFORE: netif hostname
+
+. /etc/rc.subr
+
+name="digitalocean"
+start_cmd="${name}_start"
+stop_cmd=":"
+
+digitalocean_start()
+{
+	check_startmsgs && echo "Generating DigitalOcean configuration."
+	/sbin/ifconfig vtnet0 inet 169.254.169.1/16
+	/usr/local/bin/python2.7 /usr/local/sbin/simple-fbsd-init.py
+	/sbin/ifconfig vtnet0 inet 169.254.169.1/16 delete
+}
+
+load_rc_config $name
+run_rc_command "$1"
